@@ -1,0 +1,18 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": false,
+    "baseUrl": "./",
+    "paths": {
+      "@sharedComponents/*": ["src/app/shared/components/*"],
+      "@modules/*": ["src/app/modules/*"],
+      "@utils/*": ["src/app/core/utils/*"],
+      "@actionTypes/*": ["src/app/core/store/types/*"],
+      "@actions/*": ["src/app/core/store/actions/*"],
+      "@reducers/*": ["src/app/core/store/reducers/*"],
+      "@styles": ["src/styles"],
+      "@assets": ["src/assets"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
