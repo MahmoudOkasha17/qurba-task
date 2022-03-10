@@ -10,18 +10,16 @@ import FeedCreatePost from './components/feed-create-post/feed-create-post.compo
 import { styles } from './home.styles';
 import FeedPosts from './components/feed-posts/feed-posts.component';
 
-const LOADING_PERIOD = 500;
-
 const Home = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     if (loading) {
-      const timeOut = setTimeout(() => setLoading(false), LOADING_PERIOD);
+      const timeOut = setTimeout(() => setLoading(false), 2000);
       return () => {
         clearTimeout(timeOut);
       };
     }
-  }, [loading]);
+  }, []);
 
   return (
     <SafeAreaView style={[globalStyles.container, styles.container]}>

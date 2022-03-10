@@ -14,10 +14,22 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomBarIcon from '@sharedComponents/app-bottom-bar-icon/app-bottom-bar-icon.component';
 import AppStatusBar from '@sharedComponents/app-status-bar/app-status-bar.component';
 import { StatusBar } from 'react-native';
+import { useEffect, useState } from 'react';
+import AppLoading from 'expo-app-loading';
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+  const [isReady, setIsReady] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setIsReady(true), 2000);
+    // console.log('test2');
+  }, []);
+
+  if (!isReady) {
+    return <AppLoading />;
+  }
+  //console.log('test');
   return (
     <PaperProvider>
       <AppStatusBar />
