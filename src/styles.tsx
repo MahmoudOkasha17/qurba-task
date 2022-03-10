@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: 900,
-    backgroundColor: '#fff',
+    // height: 900,
+    //backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',
     // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : '0',

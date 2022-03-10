@@ -16,26 +16,11 @@ import { palette } from '@styles';
 
 import PostComment from '../post-comment/post-comment.component';
 import PostImage from '../post-image/post-image.component';
+import { MenuPost as MenuPostInterface } from 'src/app/core/interfaces/MenuPost';
 
 type Props = {
-  post: {
-    type: string;
-    image: string;
-    name: string;
-    date: string;
-    text: string;
-    images: string[];
-    likes: string;
-    commentCount: string;
-    shares: string;
-    comments: {
-      name: string;
-      image: string;
-      text: string;
-      date: string;
-      likes: string;
-    }[];
-  };
+  post: MenuPostInterface;
+
   shared: boolean;
 };
 

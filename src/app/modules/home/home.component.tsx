@@ -1,6 +1,6 @@
 import { SafeAreaView, ScrollView, View, Image } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import SkeletonContent from 'react-native-skeleton-content';
+//import SkeletonContent from 'react-native-skeleton-content';
 
 import { styles as globalStyles } from '@styles';
 import { Card } from 'react-native-paper';
@@ -15,7 +15,7 @@ const LOADING_PERIOD = 500;
 const Home = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    if (loading === true) {
+    if (loading) {
       const timeOut = setTimeout(() => setLoading(false), LOADING_PERIOD);
       return () => {
         clearTimeout(timeOut);
@@ -27,6 +27,7 @@ const Home = () => {
     <SafeAreaView style={[globalStyles.container, styles.container]}>
       <FeedCreatePost />
       {loading ? <FeedSkeleton /> : <FeedPosts />}
+      {/* <FeedSkeleton /> */}
       {/* <FeedPosts /> */}
     </SafeAreaView>
   );
